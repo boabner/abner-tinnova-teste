@@ -62,6 +62,12 @@ class ListVeiculosBaseComponent extends Component {
                     <button className="btn btn-primary" onClick={this.getNaoVendidosClicked}>
                         Listar não vendidos
                     </button>
+                    <button className="btn btn-primary" onClick={this.getNaoVendidosClicked}>
+                        Buscar por década
+                    </button>
+                    <button className="btn btn-primary" onClick={this.getNaoVendidosClicked}>
+                        Buscar por marca
+                    </button>
                 </div>
                 <br/>
                 <ListVeiculosBodyComponent veiculos={this.state.veiculos} />
