@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import SchoolDataService from "../service/VeiculoDataService";
+import ListVeiculosBodyComponent from "./ListVeiculosBodyComponent";
 
 class ListVeiculosBaseComponent extends Component {
 
@@ -63,38 +64,7 @@ class ListVeiculosBaseComponent extends Component {
                     </button>
                 </div>
                 <br/>
-                <table className="table">
-                    <thead className="thead-dark">
-                    <tr>
-                        <th>Id</th>
-                        <th>Descrição</th>
-                        <th>Ações</th>
-                        <th>Marca</th>
-                        <th>Ano</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        this.state.veiculos.map(
-                            veiculo =>
-                                <tr key={veiculo.id}>
-                                    <td>{veiculo.id}</td>
-                                    <td>{veiculo.descricao}</td>
-                                    <td>{veiculo.marca}</td>
-                                    <td>{veiculo.ano}</td>
-                                    <td>
-                                        <button className="btn btn-primary"
-                                                onClick={() => this.updateVeiculoClicked(veiculo.id)}>Update
-                                        </button>
-                                        <button className="btn btn-danger"
-                                                onClick={() => this.deleteVeiculoClicked(veiculo.id)}>Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                        )
-                    }
-                    </tbody>
-                </table>
+                <ListVeiculosBodyComponent veiculos={this.state.veiculos} />
             </>
         )
     }

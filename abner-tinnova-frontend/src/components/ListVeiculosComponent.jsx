@@ -11,7 +11,7 @@ class ListVeiculosComponent extends Component {
                     <h3>List Veiculos</h3>
                     <Message/>
                     <div className="container">
-                        <ListVeiculosBaseComponent history={this.props.history} />
+                        <ListVeiculosBaseComponent history={this.props.history} disabled={false} />
                     </div>
                 </div>
             </>
