@@ -69,6 +69,8 @@ class ListVeiculosBaseComponent extends Component {
                         <th>Id</th>
                         <th>Descrição</th>
                         <th>Ações</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -78,6 +80,8 @@ class ListVeiculosBaseComponent extends Component {
                                 <tr key={veiculo.id}>
                                     <td>{veiculo.id}</td>
                                     <td>{veiculo.descricao}</td>
+                                    <td>{veiculo.marca}</td>
+                                    <td>{veiculo.ano}</td>
                                     <td>
                                         <button className="btn btn-primary"
                                                 onClick={() => this.updateVeiculoClicked(veiculo.id)}>Update

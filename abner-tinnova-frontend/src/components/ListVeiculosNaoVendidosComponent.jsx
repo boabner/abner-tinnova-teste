@@ -13,7 +13,29 @@ class ListVeiculosNaoVendidosComponent extends Component {
                     <h3>Veículos não vendidos</h3>
                     <Message/>
                     <div className="container">
-                        <ListVeiculosBaseComponent history={this.props.history} />
+                        <table className="table">
+                            <thead className="thead-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Descrição</th>
+                                <th>Marca</th>
+                                <th>Ano</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                this.state.veiculos.map(
+                                    veiculo =>
+                                        <tr key={veiculo.id}>
+                                            <td>{veiculo.id}</td>
+                                            <td>{veiculo.descricao}</td>
+                                            <td>{veiculo.marca}</td>
+                                            <td>{veiculo.ano}</td>
+                                        </tr>
+                                )
+                            }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </>
