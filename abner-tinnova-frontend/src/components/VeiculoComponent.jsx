@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import "react-datepicker/dist/react-datepicker.css";
 import SchoolDataService from "../service/VeiculoDataService";
 import Message from "./Message";

@@ -1,10 +1,31 @@
 import React, { Component }from "react";
 import Message from "./Message";
-import ListVeiculosBaseComponent from "./ListVeiculosBaseComponent";
+import SchoolDataService from "../service/VeiculoDataService";
 
 class ListVeiculosNaoVendidosComponent extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            veiculos: [],
+            message: null
+        }
+        this.refreshVeiculosNaoVendidos = this.refreshVeiculosNaoVendidos.bind(this)
+    }
 
+    componentDidMount() {
+        this.refreshVeiculosNaoVendidos();
+    }
+
+    refreshVeiculosNaoVendidos() {
+        SchoolDataService.retrieveVeiculosNaoVendidos()
+            .then(
+                response => {
+                    console.log(response.data)
+                    this.setState({veiculos: response.data})
+                }
+            )
+    }
 
     render() {
         return (
